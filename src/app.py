@@ -97,7 +97,7 @@ def favorites_planets(user_id, planet_id):
 @app.route('/user/<int:user_id>/favorite/people/<int:people_id>', methods=['POST'])
 def favorites_people(user_id, people_id):
     if user_id and people_id:
-        new_favorite = Favorite(user_id=user_id, character_id=people_id)
+        new_favorite = Favorite(user_id=user_id, people_id=people_id)
         db.session.add(new_favorite)
         db.session.commit()
     return jsonify(new_favorite.serialize())
