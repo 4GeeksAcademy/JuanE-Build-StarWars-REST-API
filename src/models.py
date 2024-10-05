@@ -66,7 +66,7 @@ class Favorite(db.Model):
     # Notice that each column is also a normal Python instance attribute.
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     planet_id = db.Column(db.Integer, db.ForeignKey('planet.id'), nullable=True)
-    character_id= db.Column(db.Integer, db.ForeignKey('people.id'), nullable=True)
+    people_id= db.Column(db.Integer, db.ForeignKey('people.id'), nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     user = db.relationship((User))
     planet = db.relationship((Planet))
